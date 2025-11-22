@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -26,6 +27,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.tiliga.databinding.ActivityMainBinding
 import com.example.tiliga.ui.theme.TiligaTheme
 import com.google.android.material.snackbar.Snackbar
+import com.example.tiliga.ui.theme.bgGrey
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,15 +41,20 @@ class MainActivity : ComponentActivity() {
                     }
                     Box(modifier = Modifier.padding(innerPadding))
                 }
-                Box(painterResource(id=user.png) as Modifier)
+                setContent {
+                    Column {
+                        Text("Денис Шпигальский", fontSize = 28.sp)
+                    }
+                }
             }
         }
     }
 }
 @Composable
-fun Bashka(){
-    Text(
-        text = "Денис Шпигальский"
-    )
-
+fun Bashka(modifier: Modifier= Modifier){
+    Column (
+        modifier = modifier
+            .fillMaxSize()
+            .background(
+                color =  ),
 }
